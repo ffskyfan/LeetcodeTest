@@ -1,3 +1,5 @@
 /Leetcode.VC.db
 /x64
 /Leetcode/x64
+*.opendb
+*.suo
