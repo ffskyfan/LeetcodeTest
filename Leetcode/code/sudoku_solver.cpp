@@ -25,12 +25,18 @@ namespace
 {
 	bool IsCanPutInRow(const vector<vector<char>>& board, char x, char y, char input)
 	{
+		for (char i = 0; i < 9; i++) {
+			if (board[y][i] == input) return false;
+		}
 
-		return false;
+		return true;
 	}
 
 	bool IsCanPutInCol(const vector<vector<char>>& board, char x, char y, char input)
 	{
+		for (char i = 0; i < 9; i++) {
+			if (board[i][x] == input) return false;
+		}
 
 		return false;
 	}
@@ -38,8 +44,16 @@ namespace
 
 	bool IsCanPutInBox(const vector<vector<char>>& board, char x, char y, char input)
 	{
+		char idxX = x / 3;
+		char idxY = y / 3;
 
-		return false;
+		for (char i = idxX * 3; i < ((idxX + 1) * 3); i++) {
+			for (char j = idxY * 3; j < ((idxY + 1) * 3); j++) {
+				if (board[j][i] == input) return false;
+			}
+		}
+
+		return true;
 	}
 
 
@@ -52,6 +66,17 @@ namespace
 class Solution {
 public:
 	void solveSudoku(vector<vector<char>>& board) {
+
+		vector<vector<char>> solid;
+		solid.resize(9);
+		for (char j = 0; j < 9; j++) {
+			solid[j].resize(9,false);
+			for (char i = 0; i < 9; i++) {
+				if (board[j][i] != '.') {
+					solid[j][i] = true;
+				}
+			}
+		}
 
 
 	}
