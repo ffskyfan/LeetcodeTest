@@ -38,7 +38,7 @@ namespace
 			if (board[i][x] == input) return false;
 		}
 
-		return false;
+		return true;
 	}
 
 
@@ -57,27 +57,131 @@ namespace
 	}
 
 
-	void PutNumber(const vector<vector<char>>& board, char x, char y, char number)
+	bool IsCanPutNumber(vector<vector<char>>& board, char x, char y, char number)
 	{
+		bool isCanPut = IsCanPutInRow(board, x, y, number);
+		if (isCanPut == false) {
+			return isCanPut;
+		}
 
+		isCanPut = IsCanPutInCol(board, x, y, number);
+		if (isCanPut == false) {
+			return isCanPut;
+		}
+
+		isCanPut = IsCanPutInBox(board, x, y, number);
+		if (isCanPut == false) {
+			return isCanPut;
+		}
+
+		return true;
 	}
+
+	bool PutNumber(vector<vector<char>>& board, char x, char y, char number)
+	{
+		bool isCanPut = IsCanPutNumber(board, x, y, number);
+		if (isCanPut == true) {
+			board[y][x] = number;
+		}
+
+		return isCanPut;
+	}
+
+	struct available
+	{
+		vector<char> unused;
+		vector<char> used;
+
+		bool isAvailable()
+		{
+			if (unused.empty() && used.empty())
+				return false;
+			else
+				return true;
+		}
+
+		void recover()
+		{
+			size_t count = used.size();
+			for (size_t i = 0; i < count; i++) {
+				unused.push_back(used[i]);
+			}
+			used.clear();
+		}
+	};
+
+
+	bool Solve(vector<vector<char>>& board, vector<vector<available>>& availables, char x, char y)
+	{
+		while (!availables[y][x].isAvailable())
+		{
+			x++;
+			if (x == 9) {
+				y++;
+				x = 0;
+				if (y == 9) return true;//complete
+			} 
+		}
+
+		available& data = availables[y][x];
+		while (!data.unused.empty())
+		{
+			char number = data.unused.back();
+			data.unused.pop_back();
+			data.used.push_back(number);
+			bool isPuted = PutNumber(board, x, y, number);
+			if (isPuted)
+			{
+				char nextX=x;
+				char nextY=y;
+				nextX++;
+				if (nextX == 9) {
+					nextY++;
+					nextX = 0;
+					if (nextY == 9) return true;//complete
+				}
+
+				bool isNextSolved = Solve(board, availables, nextX, nextY);
+				if (isNextSolved) {
+					return true;
+				} 
+			} 
+		}
+
+		data.recover();
+		board[y][x] = '.';
+		return false;
+	}
+
 }
 
 class Solution {
 public:
 	void solveSudoku(vector<vector<char>>& board) {
 
-		vector<vector<char>> solid;
-		solid.resize(9);
+		vector<vector<available>> availables;
+		availables.resize(9);
 		for (char j = 0; j < 9; j++) {
-			solid[j].resize(9,false);
+			availables[j].resize(9);
 			for (char i = 0; i < 9; i++) {
-				if (board[j][i] != '.') {
-					solid[j][i] = true;
+				if (board[j][i] != '.') continue;
+				for (char k = 0; k < 9; k++) {
+					char value = '1' + k;
+					bool isCanPut = IsCanPutNumber(board, i, j, value);
+					if (isCanPut == false) continue;
+					availables[j][i].unused.push_back(value);
 				}
 			}
 		}
 
+		Solve(board, availables, 0, 0);
+
+		for (char j = 0; j < 9; j++) {
+			for (char i = 0; i < 9; i++) {
+				printf("%c,", board[j][i]);
+			}
+			printf("\n");
+		}
 
 	}
 };
@@ -97,6 +201,8 @@ int main()
 
 	Solution so;
 	so.solveSudoku(board);
+
+	system("pause");
 
 	return 0;
 
