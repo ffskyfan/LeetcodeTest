@@ -39,5 +39,8 @@
     <ClCompile Include="code\sudoku_solver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\median_of_two_sorted_arrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
