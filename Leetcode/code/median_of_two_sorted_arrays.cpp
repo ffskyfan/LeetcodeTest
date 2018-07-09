@@ -114,13 +114,13 @@ public:
 };
 
 
-int main()
-{
-	vector<int> nums1 = {1,2};
-	vector<int> nums2 = {1,1};
-
-	Solution so;
-	double result = so.findMedianSortedArrays(nums1, nums2);
-
-	return 0;
-}
+//int main()
+//{
+//	vector<int> nums1 = {1,2};
+//	vector<int> nums2 = {1,1};
+//
+//	Solution so;
+//	double result = so.findMedianSortedArrays(nums1, nums2);
+//
+//	return 0;
+//}
