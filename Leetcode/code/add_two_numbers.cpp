@@ -80,29 +80,29 @@ public:
 
 
 
-int main()
-{
-	ListNode* node11 = new ListNode(1);
-	ListNode* node12 = new ListNode(2);
-	node11->next = node12;
-	ListNode* node13 = new ListNode(9);
-	node12->next = node13;
-	ListNode* node14 = new ListNode(3);
-	node13->next = node14;
-	ListNode* node15 = new ListNode(3);
-	node14->next = node15;
-
-	ListNode* node21 = new ListNode(8);
-	ListNode* node22 = new ListNode(9);
-	node21->next = node22;
-	ListNode* node23 = new ListNode(2);
-	node22->next = node23;
-
-	Solution so;
-	ListNode* result = so.addTwoNumbers(node11,node21);
-
-	return 0;
-
-}
+//int main()
+//{
+//	ListNode* node11 = new ListNode(1);
+//	ListNode* node12 = new ListNode(2);
+//	node11->next = node12;
+//	ListNode* node13 = new ListNode(9);
+//	node12->next = node13;
+//	ListNode* node14 = new ListNode(3);
+//	node13->next = node14;
+//	ListNode* node15 = new ListNode(3);
+//	node14->next = node15;
+//
+//	ListNode* node21 = new ListNode(8);
+//	ListNode* node22 = new ListNode(9);
+//	node21->next = node22;
+//	ListNode* node23 = new ListNode(2);
+//	node22->next = node23;
+//
+//	Solution so;
+//	ListNode* result = so.addTwoNumbers(node11,node21);
+//
+//	return 0;
+//
+//}
 
 
