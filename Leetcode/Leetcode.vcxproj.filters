@@ -48,5 +48,8 @@
     <ClCompile Include="code\longest_substring_without_repeating_characters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\longest_palindromic_substring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

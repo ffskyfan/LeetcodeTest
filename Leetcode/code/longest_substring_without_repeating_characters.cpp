@@ -76,15 +76,15 @@ public:
 };
 
 
-int main()
-{
-	string a("bb");
-
-	Solution so;
-	int result = so.lengthOfLongestSubstring(a);
-
-	return 0;
-
-}
+//int main()
+//{
+//	string a("bb");
+//
+//	Solution so;
+//	int result = so.lengthOfLongestSubstring(a);
+//
+//	return 0;
+//
+//}
 
 
