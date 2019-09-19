@@ -51,5 +51,8 @@
     <ClCompile Include="code\longest_palindromic_substring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\roman_to_integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -107,15 +107,15 @@ public:
 	}
 };
 
-int main()
-{
-	string a("ac");
-
-	Solution so;
-	string result = so.longestPalindrome(a);
-
-	return 0;
-
-}
+//int main()
+//{
+//	string a("ac");
+//
+//	Solution so;
+//	string result = so.longestPalindrome(a);
+//
+//	return 0;
+//
+//}
 
 
