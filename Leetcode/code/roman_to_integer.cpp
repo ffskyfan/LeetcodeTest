@@ -152,13 +152,13 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	int result = so.romanToInt("MCMXCIV");
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	int result = so.romanToInt("MCMXCIV");
+//
+//	return 0;
+//
+//}
 
 

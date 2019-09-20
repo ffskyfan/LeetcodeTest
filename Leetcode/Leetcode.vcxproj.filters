@@ -54,5 +54,14 @@
     <ClCompile Include="code\roman_to_integer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\remove_element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\valid_boomerang.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\implement_strstr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
