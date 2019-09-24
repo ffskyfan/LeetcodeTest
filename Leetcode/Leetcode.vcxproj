@@ -145,6 +145,7 @@
     <ClCompile Include="code\add_two_numbers.cpp" />
     <ClCompile Include="code\delete_node_in_a_linked_list.cpp" />
     <ClCompile Include="code\implement_strstr.cpp" />
+    <ClCompile Include="code\length_of_last_word.cpp" />
     <ClCompile Include="code\longest_palindromic_substring.cpp" />
     <ClCompile Include="code\longest_substring_without_repeating_characters.cpp" />
     <ClCompile Include="code\median_of_two_sorted_arrays.cpp" />

@@ -63,5 +63,8 @@
     <ClCompile Include="code\implement_strstr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\length_of_last_word.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

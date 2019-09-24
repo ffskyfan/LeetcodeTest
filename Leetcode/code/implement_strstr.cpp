@@ -64,14 +64,14 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-
-	int result = so.strStr("hello","ll");
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//
+//	int result = so.strStr("hello","ll");
+//
+//	return 0;
+//
+//}
 
 
