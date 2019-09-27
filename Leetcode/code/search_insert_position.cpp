@@ -74,15 +74,15 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	std::vector<int> nums = { 1,3,5,6 };
-
-	int result = so.searchInsert(nums, 2);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::vector<int> nums = { 1,3,5,6 };
+//
+//	int result = so.searchInsert(nums, 2);
+//
+//	return 0;
+//
+//}
 
 

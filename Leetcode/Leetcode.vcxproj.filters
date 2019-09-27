@@ -84,5 +84,17 @@
     <ClCompile Include="code\search_insert_position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\merge_two_sorted_lists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\remove_duplicates_from_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\remove_duplicates_from_sorted_array_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\add_binary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="code\add_binary.cpp" />
     <ClCompile Include="code\add_two_numbers.cpp" />
     <ClCompile Include="code\delete_node_in_a_linked_list.cpp" />
     <ClCompile Include="code\excel_sheet_column_number.cpp" />
@@ -152,9 +153,12 @@
     <ClCompile Include="code\longest_palindromic_substring.cpp" />
     <ClCompile Include="code\longest_substring_without_repeating_characters.cpp" />
     <ClCompile Include="code\median_of_two_sorted_arrays.cpp" />
+    <ClCompile Include="code\merge_two_sorted_lists.cpp" />
     <ClCompile Include="code\plus_one.cpp" />
     <ClCompile Include="code\power_of_three.cpp" />
     <ClCompile Include="code\power_of_two.cpp" />
+    <ClCompile Include="code\remove_duplicates_from_sorted_array.cpp" />
+    <ClCompile Include="code\remove_duplicates_from_sorted_array_2.cpp" />
     <ClCompile Include="code\remove_element.cpp" />
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
