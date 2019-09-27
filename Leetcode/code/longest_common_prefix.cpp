@@ -31,6 +31,49 @@ class Solution {
 
 public:
 	std::string longestCommonPrefix(std::vector<std::string>& strs) {
+		if(strs.empty()) return "";
+
+		int minLength = static_cast<int>(strs[0].length());
+		for(const std::string& str : strs)
+		{
+			int length = static_cast<int>(str.length());
+			if(length < minLength) minLength = length;
+		}
+
+		if(minLength==0) return "";
+
+		std::string prefix("");
+
+		for(int i = 0; i < minLength; i++)
+		{
+			bool isMatch = true;
+			char tempCh = 0;
+			for(const std::string& str : strs)
+			{
+				if(tempCh == 0)
+				{
+					tempCh = str[i];
+					continue;
+				}
+
+				if(tempCh == str[i])
+				{
+					continue;
+				}
+				else
+				{
+					isMatch = false;
+					break;
+				}
+			}
+
+			if(isMatch==true)
+				prefix.push_back(tempCh);
+			else
+				break;
+		}
+
+		return prefix;
 
 	}
 
@@ -38,16 +81,17 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	std::vector<std::string> strs = { "flow","flower","flaw" };
-	
-
-	std::string result = so.longestCommonPrefix(strs);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	//std::vector<std::string> strs = { "flow","flower","flaw" };
+//	std::vector<std::string> strs = { "","b" };
+//	
+//
+//	std::string result = so.longestCommonPrefix(strs);
+//
+//	return 0;
+//
+//}
 
 

@@ -63,16 +63,16 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	std::vector<int> digits={1,1,2,3};
-	
-
-	std::vector<int> result = so.plusOne(digits);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::vector<int> digits={1,1,2,3};
+//	
+//
+//	std::vector<int> result = so.plusOne(digits);
+//
+//	return 0;
+//
+//}
 
 

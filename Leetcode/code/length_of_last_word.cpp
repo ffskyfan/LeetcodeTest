@@ -51,16 +51,16 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	std::string str("inivn aidfn idan aidfn");
-	
-
-	int result = so.lengthOfLastWord(str);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::string str("inivn aidfn idan aidfn");
+//	
+//
+//	int result = so.lengthOfLastWord(str);
+//
+//	return 0;
+//
+//}
 
 
