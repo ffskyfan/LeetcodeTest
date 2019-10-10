@@ -96,5 +96,8 @@
     <ClCompile Include="code\add_binary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\same_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
