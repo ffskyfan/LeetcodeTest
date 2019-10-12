@@ -96,5 +96,11 @@
     <ClCompile Include="code\add_binary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\maximum_subarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\remove_duplicates_from_sorted_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
