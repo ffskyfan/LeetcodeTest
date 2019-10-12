@@ -105,5 +105,11 @@
     <ClCompile Include="code\same_tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\merge_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\symmetric_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
