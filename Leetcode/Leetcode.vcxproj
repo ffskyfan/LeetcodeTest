@@ -164,6 +164,7 @@
     <ClCompile Include="code\merge_two_sorted_lists.cpp" />
     <ClCompile Include="code\minimum_depth_of_binary_tree.cpp" />
     <ClCompile Include="code\path_sum.cpp" />
+    <ClCompile Include="code\path_sum_III.cpp" />
     <ClCompile Include="code\plus_one.cpp" />
     <ClCompile Include="code\power_of_three.cpp" />
     <ClCompile Include="code\power_of_two.cpp" />
