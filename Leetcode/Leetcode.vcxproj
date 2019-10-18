@@ -145,6 +145,7 @@
     <ClCompile Include="code\add_binary.cpp" />
     <ClCompile Include="code\add_two_numbers.cpp" />
     <ClCompile Include="code\average_of_levels_in_binary_tree.cpp" />
+    <ClCompile Include="code\balanced_binary_tree.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal_II.cpp" />
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp" />

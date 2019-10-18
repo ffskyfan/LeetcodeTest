@@ -46,40 +46,27 @@
 
 
 class Solution {
-
-	TreeNode* sortedArrayToBST(std::vector<int>& nums,int start, int end) 
+	bool isBalanced(TreeNode* tree,int& depth)
 	{
-		int mid = start+((end-start)/2);
-		TreeNode* tree = new TreeNode(nums[mid]);
+		if(tree==NULL) return true;
 
-		if(start==end) return tree;
+		int leftDepth = 0;
+		bool isLeftBalanced = isBalanced(tree->left, leftDepth);
 
-		int leftStart = start;
-		int leftEnd = mid-1;
-		leftEnd = leftEnd < leftStart ? leftStart : leftEnd;
-		if(leftStart != mid && leftEnd != mid)
-		{
-			TreeNode* left = sortedArrayToBST(nums, leftStart, leftEnd);
-			tree->left = left;
-		}
+		int rightDepth = 0;
+		bool isRightBalanced = isBalanced(tree->right, rightDepth);
 
-		int rightStart = mid+1;
-		int rightEnd = end;
-		rightStart = rightStart > end ? end : rightStart;
-		if(rightStart != mid && rightEnd != mid)
-		{
-			TreeNode* right = sortedArrayToBST(nums, rightStart, rightEnd);
-			tree->right = right;
-		}
+		if(!isLeftBalanced || !isRightBalanced) return false;
+		if(abs(leftDepth-rightDepth) >1) return false;
 
-		return tree;
+		depth = leftDepth > rightDepth ? ++leftDepth : ++rightDepth;
+		return true;
 	}
-
-
 
 public:
 	bool isBalanced(TreeNode* root) {
-
+		int depth = 0;
+		return isBalanced(root, depth);
 	}
 
 };

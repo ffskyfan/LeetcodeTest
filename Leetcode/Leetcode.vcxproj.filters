@@ -129,5 +129,8 @@
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\balanced_binary_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
