@@ -42,7 +42,7 @@
 
 
 class Solution {
-	int findPath(TreeNode* tree, int sum, int add)
+	int findPath(TreeNode* tree, int sum, int add, bool isBegin)
 	{
 		if(tree==NULL) return 0;
 
@@ -50,34 +50,56 @@ class Solution {
 		add = tree->val + add;
 		if(add == sum) selfResult = 1;
 
-		int leftResult = findPath(tree->left, sum, add);
-		int rightResult = findPath(tree->right, sum, add);
+		int leftResult = findPath(tree->left, sum, add, false);
+		int rightResult = findPath(tree->right, sum, add, false);
 
-		int leftResultR = findPath(tree->left, sum, tree->val);
-		int rightResultR = findPath(tree->right, sum, tree->val);
+		int leftResultR = 0;
+		int rightResultR = 0;
+		if(isBegin == true)
+		{
+			leftResultR = findPath(tree->left, sum, 0, true);
+			rightResultR = findPath(tree->right, sum, 0, true);
+		}
 
 		return selfResult+leftResult+rightResult+leftResultR+rightResultR;
 	}
 
 public:
 	int pathSum(TreeNode* root, int sum) {
-		return findPath(root, sum, 0);
+		return findPath(root, sum, 0, true);
 	}
 
 };
 
 
 
-//int main()
-//{
-//	Solution so;
-//	std::vector<int> a={-10, -3, 0, 5, 9};
-//	
-//
-//	TreeNode*  result = so.sortedArrayToBST(a);
-//
-//	return 0;
-//
-//}
+int main()
+{
+	Solution so;
+	//TreeNode* root = new TreeNode(10);
+	//root->left = new TreeNode(5);
+	//root->right = new TreeNode(-3);
+	//
+	//root->right->right = new TreeNode(11);
+
+	//root->left->left = new TreeNode(3);
+	//root->left->right = new TreeNode(2);
+
+	//root->left->left->left= new TreeNode(3);
+	//root->left->left->right = new TreeNode(-2);
+
+	//root->left->right->right = new TreeNode(1);
+
+	TreeNode* root = new TreeNode(1);
+	root->right = new TreeNode(2);
+	root->right->right = new TreeNode(3);
+	root->right->right->right= new TreeNode(4);
+	root->right->right->right->right = new TreeNode(5);
+
+	int  result = so.pathSum(root, 3);
+
+	return 0;
+
+}
 
 
