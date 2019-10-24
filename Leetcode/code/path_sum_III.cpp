@@ -73,33 +73,33 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	//TreeNode* root = new TreeNode(10);
-	//root->left = new TreeNode(5);
-	//root->right = new TreeNode(-3);
-	//
-	//root->right->right = new TreeNode(11);
-
-	//root->left->left = new TreeNode(3);
-	//root->left->right = new TreeNode(2);
-
-	//root->left->left->left= new TreeNode(3);
-	//root->left->left->right = new TreeNode(-2);
-
-	//root->left->right->right = new TreeNode(1);
-
-	TreeNode* root = new TreeNode(1);
-	root->right = new TreeNode(2);
-	root->right->right = new TreeNode(3);
-	root->right->right->right= new TreeNode(4);
-	root->right->right->right->right = new TreeNode(5);
-
-	int  result = so.pathSum(root, 3);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	//TreeNode* root = new TreeNode(10);
+//	//root->left = new TreeNode(5);
+//	//root->right = new TreeNode(-3);
+//	//
+//	//root->right->right = new TreeNode(11);
+//
+//	//root->left->left = new TreeNode(3);
+//	//root->left->right = new TreeNode(2);
+//
+//	//root->left->left->left= new TreeNode(3);
+//	//root->left->left->right = new TreeNode(-2);
+//
+//	//root->left->right->right = new TreeNode(1);
+//
+//	TreeNode* root = new TreeNode(1);
+//	root->right = new TreeNode(2);
+//	root->right->right = new TreeNode(3);
+//	root->right->right->right= new TreeNode(4);
+//	root->right->right->right->right = new TreeNode(5);
+//
+//	int  result = so.pathSum(root, 3);
+//
+//	return 0;
+//
+//}
 
 
