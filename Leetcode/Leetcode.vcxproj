@@ -165,6 +165,7 @@
     <ClCompile Include="code\merge_sorted_array.cpp" />
     <ClCompile Include="code\merge_two_sorted_lists.cpp" />
     <ClCompile Include="code\minimum_depth_of_binary_tree.cpp" />
+    <ClCompile Include="code\min_stack.cpp" />
     <ClCompile Include="code\number_of_segments_in_a_string.cpp" />
     <ClCompile Include="code\pascals_triangle.cpp" />
     <ClCompile Include="code\pascals_triangle_II.cpp" />

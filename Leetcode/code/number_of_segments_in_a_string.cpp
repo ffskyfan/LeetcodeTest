@@ -50,14 +50,14 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-
-	int result = so.countSegments("Hello, my name is John");
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//
+//	int result = so.countSegments("Hello, my name is John");
+//
+//	return 0;
+//
+//}
 
 
