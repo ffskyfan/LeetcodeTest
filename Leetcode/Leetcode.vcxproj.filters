@@ -171,5 +171,8 @@
     <ClCompile Include="code\factorial_trailing_zeroes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\rotate_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -182,6 +182,7 @@
     <ClCompile Include="code\remove_element.cpp" />
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
+    <ClCompile Include="code\rotate_array.cpp" />
     <ClCompile Include="code\same_tree.cpp" />
     <ClCompile Include="code\search_insert_position.cpp" />
     <ClCompile Include="code\single_number.cpp" />
