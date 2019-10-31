@@ -159,6 +159,7 @@
     <ClCompile Include="code\longest_common_prefix.cpp" />
     <ClCompile Include="code\longest_palindromic_substring.cpp" />
     <ClCompile Include="code\longest_substring_without_repeating_characters.cpp" />
+    <ClCompile Include="code\majority_element.cpp" />
     <ClCompile Include="code\maximum_depth_of_binary_tree.cpp" />
     <ClCompile Include="code\maximum_subarray.cpp" />
     <ClCompile Include="code\median_of_two_sorted_arrays.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="code\sudoku_solver.cpp" />
     <ClCompile Include="code\sum_of_two_integers.cpp" />
     <ClCompile Include="code\symmetric_tree.cpp" />
+    <ClCompile Include="code\two_sum_II_input_array_is_sorted.cpp" />
     <ClCompile Include="code\valid_boomerang.cpp" />
     <ClCompile Include="code\valid_palindrome.cpp" />
     <ClCompile Include="code\valid_palindrome_II.cpp" />
