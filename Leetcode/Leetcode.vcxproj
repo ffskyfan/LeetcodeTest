@@ -154,6 +154,8 @@
     <ClCompile Include="code\excel_sheet_column_number.cpp" />
     <ClCompile Include="code\excel_sheet_column_title.cpp" />
     <ClCompile Include="code\factorial_trailing_zeroes.cpp" />
+    <ClCompile Include="code\hamming_distance.cpp" />
+    <ClCompile Include="code\house_robber.cpp" />
     <ClCompile Include="code\implement_strstr.cpp" />
     <ClCompile Include="code\length_of_last_word.cpp" />
     <ClCompile Include="code\linked_list_cycle.cpp" />
@@ -168,6 +170,7 @@
     <ClCompile Include="code\merge_two_sorted_lists.cpp" />
     <ClCompile Include="code\minimum_depth_of_binary_tree.cpp" />
     <ClCompile Include="code\min_stack.cpp" />
+    <ClCompile Include="code\number_of_1_bits.cpp" />
     <ClCompile Include="code\number_of_segments_in_a_string.cpp" />
     <ClCompile Include="code\pascals_triangle.cpp" />
     <ClCompile Include="code\pascals_triangle_II.cpp" />
@@ -180,6 +183,7 @@
     <ClCompile Include="code\remove_duplicates_from_sorted_array_2.cpp" />
     <ClCompile Include="code\remove_duplicates_from_sorted_list.cpp" />
     <ClCompile Include="code\remove_element.cpp" />
+    <ClCompile Include="code\reverse_bits.cpp" />
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
     <ClCompile Include="code\rotate_array.cpp" />

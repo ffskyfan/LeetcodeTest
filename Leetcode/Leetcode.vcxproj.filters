@@ -174,5 +174,17 @@
     <ClCompile Include="code\rotate_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\reverse_bits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\number_of_1_bits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\hamming_distance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\house_robber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
