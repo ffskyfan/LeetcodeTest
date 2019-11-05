@@ -186,5 +186,8 @@
     <ClCompile Include="code\house_robber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\happy_number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

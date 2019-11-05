@@ -155,6 +155,7 @@
     <ClCompile Include="code\excel_sheet_column_title.cpp" />
     <ClCompile Include="code\factorial_trailing_zeroes.cpp" />
     <ClCompile Include="code\hamming_distance.cpp" />
+    <ClCompile Include="code\happy_number.cpp" />
     <ClCompile Include="code\house_robber.cpp" />
     <ClCompile Include="code\implement_strstr.cpp" />
     <ClCompile Include="code\length_of_last_word.cpp" />
