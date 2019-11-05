@@ -52,10 +52,10 @@ public:
 };
 
 
-int main()
-{
-	Solution so;
-	bool result = so.isHappy(19);
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	bool result = so.isHappy(19);
+//	return 0;
+//
+//}
