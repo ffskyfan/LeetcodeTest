@@ -189,5 +189,11 @@
     <ClCompile Include="code\happy_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\remove_linked_list_elements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\count_primes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
