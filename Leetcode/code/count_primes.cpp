@@ -10,17 +10,34 @@
 //	Explanation : There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
 //--------------------------------------------------------------------
 
-#include <string>
+#include <vector>
 
 
 class Solution {
 public:
 	int countPrimes(int n) {
+		if(n==0||n==1) return 0;
 
-		for()
+		std::vector<int> nums;
+		nums.resize(n);
+		for(int i = 0; i < n; i++)
+		{
+			nums[i] = i;
+		}
 
+		int result = 0;
+		for(int i = 2; i < n; i++)
+		{
+			if(nums[i]==0) continue;
 
+			for(int j = i+nums[i]; j < n; j+=nums[i])
+			{
+				nums[j] = 0;
+			}
+			result++;
+		}
 
+		return result;
 	}
 };
 
@@ -31,24 +48,9 @@ public:
 
 //int main()
 //{
-//	ListNode* node11 = new ListNode(1);
-//	ListNode* node12 = new ListNode(2);
-//	node11->next = node12;
-//	ListNode* node13 = new ListNode(9);
-//	node12->next = node13;
-//	ListNode* node14 = new ListNode(3);
-//	node13->next = node14;
-//	ListNode* node15 = new ListNode(3);
-//	node14->next = node15;
-//
-//	ListNode* node21 = new ListNode(8);
-//	ListNode* node22 = new ListNode(9);
-//	node21->next = node22;
-//	ListNode* node23 = new ListNode(2);
-//	node22->next = node23;
 //
 //	Solution so;
-//	ListNode* result = so.addTwoNumbers(node11,node21);
+//	int result = so.countPrimes(10);
 //
 //	return 0;
 //

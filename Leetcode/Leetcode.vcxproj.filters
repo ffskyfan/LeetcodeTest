@@ -195,5 +195,8 @@
     <ClCompile Include="code\count_primes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\isomorphic_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
