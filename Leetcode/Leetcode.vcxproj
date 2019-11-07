@@ -150,6 +150,7 @@
     <ClCompile Include="code\binary_tree_level_order_traversal.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal_II.cpp" />
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp" />
+    <ClCompile Include="code\count_primes.cpp" />
     <ClCompile Include="code\delete_node_in_a_linked_list.cpp" />
     <ClCompile Include="code\excel_sheet_column_number.cpp" />
     <ClCompile Include="code\excel_sheet_column_title.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="code\happy_number.cpp" />
     <ClCompile Include="code\house_robber.cpp" />
     <ClCompile Include="code\implement_strstr.cpp" />
+    <ClCompile Include="code\isomorphic_strings.cpp" />
     <ClCompile Include="code\length_of_last_word.cpp" />
     <ClCompile Include="code\linked_list_cycle.cpp" />
     <ClCompile Include="code\longest_common_prefix.cpp" />
@@ -184,6 +186,7 @@
     <ClCompile Include="code\remove_duplicates_from_sorted_array_2.cpp" />
     <ClCompile Include="code\remove_duplicates_from_sorted_list.cpp" />
     <ClCompile Include="code\remove_element.cpp" />
+    <ClCompile Include="code\remove_linked_list_elements.cpp" />
     <ClCompile Include="code\reverse_bits.cpp" />
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />

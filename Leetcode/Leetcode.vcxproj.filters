@@ -192,5 +192,14 @@
     <ClCompile Include="code\squares_of_a_sorted_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\remove_linked_list_elements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\count_primes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\isomorphic_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
