@@ -188,6 +188,7 @@
     <ClCompile Include="code\remove_element.cpp" />
     <ClCompile Include="code\remove_linked_list_elements.cpp" />
     <ClCompile Include="code\reverse_bits.cpp" />
+    <ClCompile Include="code\reverse_linked_list.cpp" />
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
     <ClCompile Include="code\rotate_array.cpp" />
