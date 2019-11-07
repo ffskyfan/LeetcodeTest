@@ -189,5 +189,8 @@
     <ClCompile Include="code\happy_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\squares_of_a_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

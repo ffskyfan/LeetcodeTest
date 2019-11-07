@@ -191,6 +191,7 @@
     <ClCompile Include="code\same_tree.cpp" />
     <ClCompile Include="code\search_insert_position.cpp" />
     <ClCompile Include="code\single_number.cpp" />
+    <ClCompile Include="code\squares_of_a_sorted_array.cpp" />
     <ClCompile Include="code\sudoku_solver.cpp" />
     <ClCompile Include="code\sum_of_two_integers.cpp" />
     <ClCompile Include="code\symmetric_tree.cpp" />
