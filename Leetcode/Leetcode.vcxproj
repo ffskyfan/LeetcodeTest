@@ -149,6 +149,7 @@
     <ClCompile Include="code\best_time_to_buy_and_sell_stock.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal_II.cpp" />
+    <ClCompile Include="code\contains_duplicate.cpp" />
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp" />
     <ClCompile Include="code\count_primes.cpp" />
     <ClCompile Include="code\delete_node_in_a_linked_list.cpp" />
