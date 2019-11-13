@@ -189,6 +189,9 @@
     <ClCompile Include="code\happy_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\squares_of_a_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="code\remove_linked_list_elements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -199,6 +202,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="code\contains_duplicate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\reverse_linked_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
