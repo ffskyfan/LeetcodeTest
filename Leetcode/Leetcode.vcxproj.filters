@@ -207,5 +207,8 @@
     <ClCompile Include="code\reverse_linked_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\letter_combinations_of_a_phone_number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

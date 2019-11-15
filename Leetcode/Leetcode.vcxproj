@@ -162,6 +162,7 @@
     <ClCompile Include="code\implement_strstr.cpp" />
     <ClCompile Include="code\isomorphic_strings.cpp" />
     <ClCompile Include="code\length_of_last_word.cpp" />
+    <ClCompile Include="code\letter_combinations_of_a_phone_number.cpp" />
     <ClCompile Include="code\linked_list_cycle.cpp" />
     <ClCompile Include="code\longest_common_prefix.cpp" />
     <ClCompile Include="code\longest_palindromic_substring.cpp" />
