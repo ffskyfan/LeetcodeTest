@@ -210,5 +210,8 @@
     <ClCompile Include="code\letter_combinations_of_a_phone_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\container_with_most_water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
