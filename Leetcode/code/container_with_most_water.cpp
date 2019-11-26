@@ -30,27 +30,17 @@ public:
 		if(count < 2) return 0;
 
 		int result = 0;
-		for(int i = 0; i < count; i++)
+		for(int i = 0, j=count-1; i < j; )
 		{
 			int iHeight = height[i];
-			if(i != 0)
-			{ 
-				int maxPossibleHeight = iHeight * (count - i - 1);
-				if(maxPossibleHeight < result) continue;
-			}
+			int jHeight = height[j];
 
-			for(int j = i + 1; j < count; j++)
-			{
-				int jHeight = height[j];
-				int minHeight = iHeight<jHeight?iHeight:jHeight;
+			int height = iHeight < jHeight ? iHeight : jHeight;
+			int area = height * (j - i);
+			if(area>result) result = area;
 
-				int area = minHeight*(j-i);
-				if(area>result)
-				{
-					result = area;
-				}
-
-			}
+			if(iHeight < jHeight) i++;
+			else j--;
 		}
 
 		return result;
