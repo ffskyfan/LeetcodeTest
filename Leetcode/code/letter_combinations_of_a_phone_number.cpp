@@ -96,10 +96,10 @@ public:
 };
 
 
-int main()
-{
-	Solution so;
-	vector<string> result = so.letterCombinations("2");
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	vector<string> result = so.letterCombinations("2");
+//	return 0;
+//
+//}

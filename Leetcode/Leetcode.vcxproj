@@ -161,6 +161,7 @@
     <ClCompile Include="code\happy_number.cpp" />
     <ClCompile Include="code\house_robber.cpp" />
     <ClCompile Include="code\implement_strstr.cpp" />
+    <ClCompile Include="code\integer_to_roman.cpp" />
     <ClCompile Include="code\isomorphic_strings.cpp" />
     <ClCompile Include="code\length_of_last_word.cpp" />
     <ClCompile Include="code\letter_combinations_of_a_phone_number.cpp" />
