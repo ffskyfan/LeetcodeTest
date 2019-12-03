@@ -216,5 +216,8 @@
     <ClCompile Include="code\integer_to_roman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\3sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
