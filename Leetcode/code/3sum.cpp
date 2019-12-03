@@ -23,62 +23,53 @@
 #include <algorithm>
 
 class Solution {
+	const int MaxDepth = 2;
 
-
-	bool IsSame(const std::vector<int>& a, const std::vector<int>& b)
+	void Check(const std::vector<int>& nums, int begin, int end, int want, int depth, std::vector<int>& result, std::vector<std::vector<int>>& allResult)
 	{
-		if(a[0]==b[0]&&a[1]==b[1]&&a[2]==b[2]) return true;
-
-		return false;
-	}
-
-	bool IsAlreadyHave(const std::vector<std::vector<int>>& a, const std::vector<int>& b)
-	{
-		for(const std::vector<int> content : a)
+		for(int i = begin; i < end; i++)
 		{
-			if(IsSame(content, b)) return true;
+			int a = nums[i];
+			if(i > begin&& a == nums[i - 1]) continue;
+
+			if(depth == MaxDepth)
+			{
+				if(a != want) continue;
+
+				result.push_back(a);
+				allResult.push_back(result);
+				result.pop_back();
+				return;
+			}
+			else
+			{
+				result.push_back(a);
+
+				a = want - a;
+				Check(nums, i + 1, end, a, depth + 1, result, allResult);
+				result.pop_back();
+			}
+
 		}
 
-		return false;
 	}
+
 
 public:
 	std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
 
-		std::vector<std::vector<int>> result;
+
+		std::sort(nums.begin(), nums.end());
+
+		std::vector<int> result;
+		std::vector<std::vector<int>> allResult;
+
 		int count = static_cast<int>(nums.size());
-		for(int i = 0; i < count; i++)
-		{
-			int a = nums[i];
-			a = 0 - a;
-			for(int j = i + 1; j < count; j++)
-			{
-				int b = nums[j];
-				b = a - b;
 
-				std::set<int> answerbs;
+		Check(nums, 0, count, 0, 0, result, allResult);
 
-				for(int h = j + 1; h < count; h++)
-				{
-					int c = nums[h];
-					if(c == b) 
-					{ 
-						std::vector<int> part = {nums[i], nums[j], nums[h]};
-						std::sort(part.begin(), part.end());
 
-						if(!IsAlreadyHave(result,  part)) {
-
-							answerbs[nums[j]];
-				
-							result.push_back(part);
-						}
-						break;
-					}
-				}
-			}
-		}
-
-		return result;
+		return allResult;
 
 	}
 };
