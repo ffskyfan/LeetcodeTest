@@ -27,30 +27,52 @@ class Solution {
 
 	void Check(const std::vector<int>& nums, int begin, int end, int want, int depth, std::vector<int>& result, std::vector<std::vector<int>>& allResult)
 	{
-		for(int i = begin; i < end; i++)
+		if(depth == MaxDepth) 
 		{
-			int a = nums[i];
-			if(i > begin&& a == nums[i - 1]) continue;
-
-			if(depth == MaxDepth)
+			if(want<nums[begin] || want>nums[end]) return;
+			for(; begin <= end;) 
 			{
-				if(a != want) continue;
+				int mid = begin + ((end - begin) / 2);
+				if(nums[mid] == want) 
+				{
+					result.push_back(want);
+					allResult.push_back(result);
+					result.pop_back();
+					return;
+				}
 
-				result.push_back(a);
-				allResult.push_back(result);
-				result.pop_back();
-				return;
+				if(want > nums[mid]) 
+				{
+					begin = mid + 1;
+				}
+				else 
+				{
+					end = mid - 1;
+				}
 			}
-			else
+		}
+		else
+		{
+			if(depth == 1)
 			{
+				if(want >= 0 && nums[end] < 0) return;
+				if(want <= 0 && nums[begin] > 0) return;
+			}
+
+			for(int i = begin; i < end; i++)
+			{
+				int a = nums[i];
+				if(i > begin&& a == nums[i - 1]) continue;
+
 				result.push_back(a);
 
 				a = want - a;
 				Check(nums, i + 1, end, a, depth + 1, result, allResult);
 				result.pop_back();
 			}
-
 		}
+
+
 
 	}
 
@@ -58,19 +80,17 @@ class Solution {
 public:
 	std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
 
+		std::vector<std::vector<int>> allResult;
+
+		int count = static_cast<int>(nums.size());
+		if(count < 2) return allResult;
 
 		std::sort(nums.begin(), nums.end());
 
 		std::vector<int> result;
-		std::vector<std::vector<int>> allResult;
-
-		int count = static_cast<int>(nums.size());
-
-		Check(nums, 0, count, 0, 0, result, allResult);
-
+		Check(nums, 0, count-1, 0, 0, result, allResult);
 
 		return allResult;
-
 	}
 };
 
