@@ -16,45 +16,6 @@
 
 class Solution {
 
-	int FindClosestIdx(std::vector<int>& nums, int target)
-	{
-		int interval = 0;
-		int begin = 0;
-		int end = static_cast<int>(nums.size()-1);
-		int mid = 0;
-		for(; begin <= end;)
-		{
-			mid = begin + ((end - begin) / 2);
-			interval = target - nums[mid];
-
-			if(target > nums[mid])
-			{
-				begin = mid + 1;
-			}
-			else if(target < nums[mid])
-			{
-				end = mid - 1;
-			}
-			else
-			{
-				break;
-			}
-		}
-
-		if(nums[mid] == target) return mid;
-
-		if(mid - 1 >= 0 && ((abs(target - nums[mid - 1]) < abs(target - nums[mid]))
-		{
-				return mid - 1;
-		}
-		else if(mid + 1 <= static_cast<int>(nums.size() - 1) && ((abs(target - nums[mid + 1]) < abs(target - nums[mid]))
-		{
-			return mid + 1;
-		}
-
-		return mid;
-	}
-
 
 public:
 	int threeSumClosest(std::vector<int>& nums, int target) {
@@ -71,25 +32,7 @@ public:
 
 		std::sort(nums.begin(), nums.end());
 
-		int targetClosestIdx = FindClosestIdx(nums, target);
-		int zeroClosestIdx = FindClosestIdx(nums, 0);
-		if(zeroClosestIdx == targetClosestIdx)
 
-		int zeroClosestBeforIdx = zeroClosestIdx - 1;
-		int zeroClosestAfterIdx = zeroClosestIdx + 1;
-		if(zeroClosestBeforIdx < 0)
-		{
-			return nums[targetClosestIdx]
-
-		}
-		else if(zeroClosestAfterIdx >= count)
-		{
-
-		}
-		else
-		{
-
-		}
 
 
 	}

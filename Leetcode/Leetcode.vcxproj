@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="code\3sum.cpp" />
     <ClCompile Include="code\3sum_closest.cpp" />
+    <ClCompile Include="code\4sum.cpp" />
     <ClCompile Include="code\add_binary.cpp" />
     <ClCompile Include="code\add_two_numbers.cpp" />
     <ClCompile Include="code\average_of_levels_in_binary_tree.cpp" />
