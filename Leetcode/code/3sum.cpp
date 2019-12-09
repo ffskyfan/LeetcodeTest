@@ -94,12 +94,12 @@ public:
 	}
 };
 
-int main()
-{
-	Solution so;
-	std::vector<int> numbers = {-1,0,1,2,-1,-4};
-	std::vector<std::vector<int>> result = so.threeSum(numbers);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::vector<int> numbers = {-1,0,1,2,-1,-4};
+//	std::vector<std::vector<int>> result = so.threeSum(numbers);
+//
+//	return 0;
+//
+//}

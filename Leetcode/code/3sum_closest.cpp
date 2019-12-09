@@ -32,18 +32,19 @@ public:
 
 		std::sort(nums.begin(), nums.end());
 
+		return 0;
 
 
 
 	}
 };
 
-int main()
-{
-	Solution so;
-	std::vector<int> numbers = {-1,0,1,2,-1,-4};
-	int result = so.threeSumClosest(numbers, 3);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::vector<int> numbers = {-1,0,1,2,-1,-4};
+//	int result = so.threeSumClosest(numbers, 3);
+//
+//	return 0;
+//
+//}
