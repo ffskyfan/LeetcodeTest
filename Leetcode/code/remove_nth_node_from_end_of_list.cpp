@@ -66,16 +66,16 @@ public:
 
 
 
-int main()
-{
-	ListNode* node1 = new ListNode(1);
-
-
-	Solution so;
-	ListNode* result = so.removeNthFromEnd(node1, 1);
-
-	return 0;
-
-}
+//int main()
+//{
+//	ListNode* node1 = new ListNode(1);
+//
+//
+//	Solution so;
+//	ListNode* result = so.removeNthFromEnd(node1, 1);
+//
+//	return 0;
+//
+//}
 
 
