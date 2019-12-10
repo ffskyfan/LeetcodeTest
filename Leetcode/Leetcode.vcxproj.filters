@@ -228,5 +228,8 @@
     <ClCompile Include="code\remove_nth_node_from_end_of_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\generate_parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

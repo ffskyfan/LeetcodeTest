@@ -160,6 +160,7 @@
     <ClCompile Include="code\excel_sheet_column_number.cpp" />
     <ClCompile Include="code\excel_sheet_column_title.cpp" />
     <ClCompile Include="code\factorial_trailing_zeroes.cpp" />
+    <ClCompile Include="code\generate_parentheses.cpp" />
     <ClCompile Include="code\hamming_distance.cpp" />
     <ClCompile Include="code\happy_number.cpp" />
     <ClCompile Include="code\house_robber.cpp" />
