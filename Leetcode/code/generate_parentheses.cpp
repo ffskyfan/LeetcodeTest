@@ -21,29 +21,42 @@ using namespace std;
 class Solution {
 
 
-	string generatePerfectParenthesis(int n) 
+	void generateParenthesis(int n, int globalRemainedLeftNum, int uncloseLeftNum, int currentIdx,std::vector<string>& result)
 	{
-		string result;
-		result.reserve(128);
-		
-		for(int i = 0; i < n; i++) result.push_back('(');
-		for(int i = 0; i < n; i++) result.push_back(')');
+		bool needNewStr = false;
 
-		return result;
+		//push left
+		if(globalRemainedLeftNum - 1 >= 0)
+		{
+			//add(
+			result[currentIdx].append("(");
+			generateParenthesis(n, globalRemainedLeftNum-1, uncloseLeftNum+1, currentIdx, result);
+
+			needNewStr = true;
+		}
+
+		//push right
+		if(uncloseLeftNum > 0)
+		{
+			//add)
+			if(needNewStr)
+			{
+				string newResStr = result[currentIdx];
+				newResStr.append(")");
+				result.push_back(newResStr);
+				generateParenthesis(n, globalRemainedLeftNum, uncloseLeftNum - 1, static_cast<int>(result.size()) - 1, result);
+			}
+			else
+			{
+				result[currentIdx].append(")");
+				generateParenthesis(n, globalRemainedLeftNum, uncloseLeftNum - 1, currentIdx, result);
+			}
+		}
+		
 	}
 
 
 
-	 void generateParenthesis(int n, std::vector<string>& result) 
-	 {
-		for(int i = 1; i <= n; i++)
-		{
-			int wantSub = n-i;
-			generateParenthesis(wantSub,  result);
-		}
-
-
-	 }
 
 
 public:
@@ -51,7 +64,8 @@ public:
 		std::vector<string> result;
 		if(n<=0) return result;
 
-		generateParenthesis(n, result);
+		result.push_back("");
+		generateParenthesis(n, n, 0, 0, result);
 
 		return result;
 	}
@@ -61,7 +75,7 @@ public:
 int main()
 {
 	Solution so;
-	vector<string> result = so.generateParenthesis(3);
+	vector<string> result = so.generateParenthesis(4);
 	//string result = so.convert("PAYPALISHIRING", 3);
 
 	return 0;
