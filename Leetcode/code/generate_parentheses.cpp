@@ -23,7 +23,8 @@ class Solution {
 
 	void generateParenthesis(int n, int globalRemainedLeftNum, int uncloseLeftNum, int currentIdx,std::vector<string>& result)
 	{
-		bool needNewStr = false;
+		bool   needNewStr = false;
+		string temp		  = result[currentIdx];
 
 		//push left
 		if(globalRemainedLeftNum - 1 >= 0)
@@ -41,7 +42,7 @@ class Solution {
 			//add)
 			if(needNewStr)
 			{
-				string newResStr = result[currentIdx];
+				string newResStr = temp;
 				newResStr.append(")");
 				result.push_back(newResStr);
 				generateParenthesis(n, globalRemainedLeftNum, uncloseLeftNum - 1, static_cast<int>(result.size()) - 1, result);
@@ -54,10 +55,6 @@ class Solution {
 		}
 		
 	}
-
-
-
-
 
 public:
 	std::vector<string> generateParenthesis(int n) {
@@ -72,12 +69,12 @@ public:
 };
 
 
-int main()
-{
-	Solution so;
-	vector<string> result = so.generateParenthesis(4);
-	//string result = so.convert("PAYPALISHIRING", 3);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	vector<string> result = so.generateParenthesis(4);
+//	//string result = so.convert("PAYPALISHIRING", 3);
+//
+//	return 0;
+//
+//}
