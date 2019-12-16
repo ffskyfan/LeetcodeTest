@@ -234,5 +234,8 @@
     <ClCompile Include="code\swap_nodes_in_pairs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\reverse_nodes_in_k_group.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
