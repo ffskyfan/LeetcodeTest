@@ -231,5 +231,8 @@
     <ClCompile Include="code\generate_parentheses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\swap_nodes_in_pairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
