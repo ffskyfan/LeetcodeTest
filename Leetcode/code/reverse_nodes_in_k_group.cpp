@@ -33,22 +33,43 @@ struct ListNode {
 class Solution {
 public:
 	ListNode* reverseKGroup(ListNode* head, int k) {
+		if(k <= 1 || head == nullptr) return head;
 
-		vector<ListNode*> group;
-		group.resize(k+1, nullptr);
+		ListNode** group = new ListNode*[k+2];
+		for(int i=0;i<k+2;i++) group[i]=nullptr;
+		ListNode* node = head;
+
+		ListNode* result = nullptr;
 
 		for(;;)
 		{
-			for(int i = 0; i < k; i++)
+			int i = 0;
+			for(; i < k; i++)
 			{
+				group[i]= node;
+				if(node==nullptr) break;
+				node = node->next;
+			}
+			if(node!=nullptr) group[i] = node->next;
 
+			if(i < k)
+			{
+				if(result == nullptr) result = group[0];
+				if(group[k + 1] != nullptr) group[k + 1]->next = group[0];
+				break;
 			}
 
+			i = i - 1;
+			if(group[k + 1] != nullptr) group[k + 1]->next = group[i];
+			for(; i > 0; i--)
+			{
+				group[i]->next = group[i-1];
+			}
+			group[k+1] = group[i];
+			if(result == nullptr) result = group[k-1];
 		}
 
-
-
-
+		return result;
 	}
 };
 
@@ -56,20 +77,15 @@ public:
 //int main()
 //{
 //	Solution so;
-//	ListNode* a1 = new ListNode(2);
-//	//ListNode* a2 = new ListNode(2);
-//	//a1->next = a2;
-//	//ListNode* a3 = new ListNode(4);
-//	//a2->next = a3;
+//	ListNode* a1 = new ListNode(1);
+//	ListNode* a2 = new ListNode(2); a1->next = a2;
+//	//ListNode* a3 = new ListNode(3); a2->next = a3;
+//	//ListNode* a4 = new ListNode(4); a3->next = a4;
+//	//ListNode* a5 = new ListNode(5); a4->next = a5;
 //
 //
-//	ListNode* b1 = new ListNode(1);
-//	//ListNode* b2 = new ListNode(3);
-//	//b1->next = b2;
-//	//ListNode* b3 = new ListNode(4);
-//	//b2->next = b3;
 //
-//	ListNode* result = so.mergeTwoLists(a1, b1);
+//	ListNode* result = so.reverseKGroup(a1, 3);
 //
 //	return 0;
 //
