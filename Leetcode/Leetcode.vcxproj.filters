@@ -237,5 +237,8 @@
     <ClCompile Include="code\reverse_nodes_in_k_group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\combination_sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
