@@ -51,19 +51,33 @@ class Solution {
 	}
 
 
-	vector<int> combinationSum(vector<int>& candidates, int begin, int end, int target, vector<vector<int>>& result)
+	int combinationSum(vector<int>& candidates, int begin, int end, int target, vector<vector<int>>& result)
 	{
-		if(target==0) return;
+		int resultEndIdx = static_cast<int>(result.size()-1);
 
+		if(target == 0)
+		{
+			result.push_back(vector<int>());
+			return resultEndIdx + 1;
+		}
+
+		bool haveNewContent = false;
 		int closestIdx = searchClosestTarget(candidates,begin, end ,target);
-;
 		for(int i = closestIdx; i >= 0; i--)
 		{
 			int nextTarget = target - candidates[i];
 
-			vector<int> newResult = combinationSum(candidates, begin, i, nextTarget, result);
+			int pushBeginIdx = combinationSum(candidates, begin, i, nextTarget, result);
+			if(pushBeginIdx > resultEndIdx) haveNewContent = true;
+			int resultCount = static_cast<int>(result.size());
+			for(int j = pushBeginIdx; j < resultCount; j++)
+			{
+				result[j].push_back(candidates[i]);
+			}
 		}
 
+		if(haveNewContent) return resultEndIdx + 1;
+		else return resultEndIdx;
 	}
 
 
@@ -75,21 +89,10 @@ public:
 
 		int begin = 0;
 		int end = static_cast<int>(candidates.size())-1;
-		int closestIdx = searchClosestTarget(candidates,begin, end ,target);
-;
-		for(int i = closestIdx; i >= 0; i--)
-		{
-			int nextTarget = target - candidates[i];
-			if(nextTarget==0) continue;
-			
 
+		combinationSum(candidates, begin, end, target, result);
 
-
-		}
-
-
-
-
+		return result;
 	}
 };
 
@@ -98,14 +101,15 @@ public:
 //
 
 
-//int main()
-//{
-//
-//	Solution so;
-//	int result = so.countPrimes(10);
-//
-//	return 0;
-//
-//}
+int main()
+{
+	vector<int> candidates = { 2,3,6,7 };
+
+	Solution so;
+	vector<vector<int>> result = so.combinationSum(candidates, 10);
+
+	return 0;
+
+}
 
 
