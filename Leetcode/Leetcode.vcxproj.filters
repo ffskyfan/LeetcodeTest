@@ -240,5 +240,8 @@
     <ClCompile Include="code\combination_sum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\combination_sum_II.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

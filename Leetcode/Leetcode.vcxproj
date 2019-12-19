@@ -153,6 +153,7 @@
     <ClCompile Include="code\binary_tree_level_order_traversal.cpp" />
     <ClCompile Include="code\binary_tree_level_order_traversal_II.cpp" />
     <ClCompile Include="code\combination_sum.cpp" />
+    <ClCompile Include="code\combination_sum_II.cpp" />
     <ClCompile Include="code\container_with_most_water.cpp" />
     <ClCompile Include="code\contains_duplicate.cpp" />
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp" />
