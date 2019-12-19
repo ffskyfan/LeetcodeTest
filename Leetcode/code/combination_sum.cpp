@@ -54,21 +54,25 @@ class Solution {
 	int combinationSum(vector<int>& candidates, int begin, int end, int target, vector<vector<int>>& result)
 	{
 		int resultEndIdx = static_cast<int>(result.size()-1);
-
 		if(target == 0)
 		{
 			result.push_back(vector<int>());
 			return resultEndIdx + 1;
 		}
 
+		if(target < candidates[0]) return resultEndIdx;
+
 		bool haveNewContent = false;
-		int closestIdx = searchClosestTarget(candidates,begin, end ,target);
+		int closestIdx = searchClosestTarget(candidates, begin, end, target);
 		for(int i = closestIdx; i >= 0; i--)
 		{
 			int nextTarget = target - candidates[i];
 
+			int resultEndIdxInThisLoop = static_cast<int>(result.size() - 1);
 			int pushBeginIdx = combinationSum(candidates, begin, i, nextTarget, result);
-			if(pushBeginIdx > resultEndIdx) haveNewContent = true;
+			if(pushBeginIdx == resultEndIdxInThisLoop)  continue;
+
+			haveNewContent = true;
 			int resultCount = static_cast<int>(result.size());
 			for(int j = pushBeginIdx; j < resultCount; j++)
 			{
@@ -97,13 +101,15 @@ public:
 };
 
 
-//
-//
+//解法：先让数列从小到大排列，从数列里找到最接近目标数的那个数 closestTar，然后从closestTar开始，
+//从大到小依次次用目标数减去数列里小于目标值的数，
+//每次减去后会得到一个余数，这个数作为下一层级的目标数继续用上面的方法求解。这样递归下去。
+//随着递归一层层深入，每次减出0来了，就得到一个完整的组合数。
 
 
 int main()
 {
-	vector<int> candidates = { 2,3,6,7 };
+	vector<int> candidates = { 2,3,6,7,10 };
 
 	Solution so;
 	vector<vector<int>> result = so.combinationSum(candidates, 10);
