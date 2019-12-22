@@ -243,5 +243,14 @@
     <ClCompile Include="code\combination_sum_II.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\contains_duplicate_II.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\contains_duplicate_III.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\rotate_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

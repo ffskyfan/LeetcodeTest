@@ -156,6 +156,8 @@
     <ClCompile Include="code\combination_sum_II.cpp" />
     <ClCompile Include="code\container_with_most_water.cpp" />
     <ClCompile Include="code\contains_duplicate.cpp" />
+    <ClCompile Include="code\contains_duplicate_II.cpp" />
+    <ClCompile Include="code\contains_duplicate_III.cpp" />
     <ClCompile Include="code\convert_sorted_array_to_binary_search_tree.cpp" />
     <ClCompile Include="code\count_primes.cpp" />
     <ClCompile Include="code\delete_node_in_a_linked_list.cpp" />
@@ -204,6 +206,7 @@
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
     <ClCompile Include="code\rotate_array.cpp" />
+    <ClCompile Include="code\rotate_list.cpp" />
     <ClCompile Include="code\same_tree.cpp" />
     <ClCompile Include="code\search_insert_position.cpp" />
     <ClCompile Include="code\single_number.cpp" />

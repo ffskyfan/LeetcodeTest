@@ -111,15 +111,15 @@ public:
 //随着递归一层层深入，每次减出0来了，就得到一个完整的组合数。
 
 
-int main()
-{
-	vector<int> candidates = { 2,3,6,7,10 };
-
-	Solution so;
-	vector<vector<int>> result = so.combinationSum(candidates, 10);
-
-	return 0;
-
-}
+//int main()
+//{
+//	vector<int> candidates = { 2,3,6,7,10 };
+//
+//	Solution so;
+//	vector<vector<int>> result = so.combinationSum(candidates, 10);
+//
+//	return 0;
+//
+//}
 
 
