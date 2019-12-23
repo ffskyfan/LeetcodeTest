@@ -252,5 +252,8 @@
     <ClCompile Include="code\rotate_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\multiply_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
