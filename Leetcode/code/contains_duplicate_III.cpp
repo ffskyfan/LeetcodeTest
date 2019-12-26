@@ -71,15 +71,15 @@ public:
 
 
 
-int main()
-{
-
-	Solution so;
-	vector<int> a = { 7,1,3 };
-	bool result = so.containsNearbyAlmostDuplicate(a, 2, 3);
-
-	return 0;
-
-}
+//int main()
+//{
+//
+//	Solution so;
+//	vector<int> a = { 7,1,3 };
+//	bool result = so.containsNearbyAlmostDuplicate(a, 2, 3);
+//
+//	return 0;
+//
+//}
 
 
