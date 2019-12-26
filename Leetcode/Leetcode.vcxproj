@@ -182,6 +182,7 @@
     <ClCompile Include="code\maximum_depth_of_binary_tree.cpp" />
     <ClCompile Include="code\maximum_subarray.cpp" />
     <ClCompile Include="code\median_of_two_sorted_arrays.cpp" />
+    <ClCompile Include="code\merge_intervals.cpp" />
     <ClCompile Include="code\merge_sorted_array.cpp" />
     <ClCompile Include="code\merge_two_sorted_lists.cpp" />
     <ClCompile Include="code\minimum_depth_of_binary_tree.cpp" />
@@ -208,6 +209,7 @@
     <ClCompile Include="code\reverse_string.cpp" />
     <ClCompile Include="code\roman_to_integer.cpp" />
     <ClCompile Include="code\rotate_array.cpp" />
+    <ClCompile Include="code\rotate_image.cpp" />
     <ClCompile Include="code\rotate_list.cpp" />
     <ClCompile Include="code\same_tree.cpp" />
     <ClCompile Include="code\search_insert_position.cpp" />

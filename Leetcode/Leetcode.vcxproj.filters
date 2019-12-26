@@ -258,5 +258,11 @@
     <ClCompile Include="code\add_strings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\merge_intervals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\rotate_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
