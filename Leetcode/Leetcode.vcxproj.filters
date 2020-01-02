@@ -264,5 +264,8 @@
     <ClCompile Include="code\rotate_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\group_anagrams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

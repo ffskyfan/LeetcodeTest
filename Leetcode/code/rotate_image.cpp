@@ -60,9 +60,9 @@ public:
 
 		for(int j = end; j > 0; j--)
 		{
-			for(int i = end-j; i < end; i++)
+			for(int i = end-j; i < j; i++)
 			{
-				int m = j - i;
+				int m = end - i;
 				int n = end - j;
 
 				temp = matrix[i][n];
