@@ -267,5 +267,8 @@
     <ClCompile Include="code\group_anagrams.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\merge_k_sorted_lists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
