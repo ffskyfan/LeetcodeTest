@@ -44,59 +44,145 @@
 using namespace std;
 
 class Solution {
+
 public:
 	int divide(int dividend, int divisor) {
+
+		uint32_t x = 1 << 32 - 1;
+		int minInt = int(x);
+
 		if(divisor==1) return dividend;
 		if(dividend==0) return dividend;
+		if(divisor==-1) 
+		{
+			if(dividend == minInt)dividend++;
+			return -dividend;
+		}
+
+		if(divisor==minInt){
+			if(dividend==minInt) return 1;
+			return 0;
+		}
+
+		bool isNeedPatch = false;
+		if(dividend == minInt) 
+		{
+			dividend++;
+			isNeedPatch = true;
+		}
+
 
 		bool isPositive  = true;
 		if((dividend<0&&divisor>0)||(dividend>0&&divisor<0)) isPositive=false;
 
 		int surplus = abs(dividend);
-		int newDivisor = abs(divisor);
-
-		vector<int> newDivisorStack;
+		int newBaseDivisor = abs(divisor);
+		int newDivisor = newBaseDivisor;
 
 		int result = 0;
-		int idx = 0;
-		int subtractionTimes = 0;
-		for(;;)
-		{
-			if (surplus < newDivisor)
-			{
-				if(subtractionTimes==0 || subtractionTimes==1) return result;
 
-				subtractionTimes = subtractionTimes >> 1;
+		const int maxDivisor = 1<<30;
+		if(newDivisor >= maxDivisor) 
+		{
+			if(surplus>=maxDivisor) 
+			{
+				if(surplus>=newDivisor) result = 1;
 			}
 
-			surplus = surplus - newDivisor;
-			if (subtractionTimes == 0)
-				subtractionTimes++;
-			else
-				subtractionTimes = subtractionTimes << 1;
-
-			if (surplus > 0)
+			if(isPositive)
 			{
-				result += subtractionTimes;
+				return result;
+			}
+			else
+			{
+				return -result;
 			}
 		}
 
+		vector<int> newDivisorStack;
+
+		int idx = 0;
+		int subtractionTimes = 1;
+		bool isDivisorGrowing = true;
+		for(;;)
+		{
+			if(surplus==0) break;
+
+			if (surplus < newDivisor)
+			{
+				if(subtractionTimes == 0 || subtractionTimes == 1) break;
+
+				if(isDivisorGrowing == true)  isDivisorGrowing = false;
+				subtractionTimes = subtractionTimes >> 1;
+				newDivisor = newDivisor >> 1;
+				continue;
+			}
+
+			surplus = surplus - newDivisor;
+			if(isNeedPatch)
+			{
+				surplus++;
+				isNeedPatch = false;
+			}
+
+			if (surplus >= 0)
+			{
+				result += subtractionTimes;
+			}
+			else
+			{
+				continue;//按道理到不了这里，在这里加段防御性代码，如果到了，可能有我没想到的地方。
+			}
+
+			if(newDivisor < maxDivisor)
+			{//左移不会溢出
+				if(isDivisorGrowing)
+				{
+					newDivisor = newDivisor << 1;
+					subtractionTimes = subtractionTimes << 1;
+				}
+				else
+				{
+					if(newDivisor > newBaseDivisor)
+					{
+						newDivisor = newDivisor >> 1;
+						subtractionTimes = subtractionTimes >> 1;
+					}
+				}
+			}
+
+
+		}
+
+		if(isPositive)
+		{
+			return result;
+		}
+		else
+		{
+			return -result;
+		}
 
 	}
 };
 
-//解法：先用dividend减去divisor,然后次数+1， 看看减的结果是否小于divisor,如果小于返回次数，否则divisor自己加自己，形成新的divisor
-//再用减后的结果减去新的divisor，
+//解法：先用dividend减去divisor,然后次数+1， 看看减的结果是否小于divisor,如果小于返回次数，否则divisor自己加自己(用左移操作符实现，快)，形成新的divisor
+//再用减后的结果减去新的divisor，就这样divisor成倍增大，直到新结果小于新divisor，然后divisor开始成倍缩小，直到divisor回到原来大小，
+//这时新结果肯定小于divisor，就是除完了，我们把divisor积累的倍数加起来，就是最后的商
+//效率是O(logn)
 
-//int main()
-//{
-//	vector<int> candidates = { 2,3,6,7,10 };
-//
-//	Solution so;
-//	vector<vector<int>> result = so.combinationSum(candidates, 10);
-//
-//	return 0;
-//
-//}
+int main()
+{
+	uint32_t x = 1<<32 -1;
+	int dividend = int(x);
+	//dividend++;
+
+	
+	Solution so;
+	int result = so.divide(1076233784, -1766978113);
+
+	return 0;
+
+}
 
 
