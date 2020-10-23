@@ -15,6 +15,7 @@
 
 #include <vector>
 #include <set>
+#include <string>
 
 using namespace std;
 

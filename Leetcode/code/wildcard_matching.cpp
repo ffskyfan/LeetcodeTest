@@ -42,6 +42,7 @@
 //	p contains only lowercase English letters, '?' or '*'.
 //-------------------------------------------------------------------------------------------------------------
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -118,12 +119,90 @@ class Solution {
 
 public:
 	bool isMatch(string s, string p) {
+		string begin;
+		string end;
+		vector<string*> freeParts;
 
-		string* parts;
-		bool*	isFreeSearch;
-		
 		size_t pLength = p.size();
-		for(size_t i = 0; i < pLength; i++)
+		size_t i = 0;
+		for(; i < pLength ; i++)
+		{
+			char ch = p[i];
+			if(p[i] != '*')
+			{
+				begin.push_back(ch);
+			}
+			else 
+				break;
+		}
+
+		int j = static_cast<int>(pLength)-1;
+		for(; j >= 0 && j > i; j--)
+		{
+			char ch = p[j];
+			if(p[j] != '*')
+			{
+				end.push_back(ch);
+			}
+			else 
+				break;
+		}
+
+		string* str = new string;
+		for(; i < j; i++)
+		{
+			char ch = p[i];
+			if(p[i] != '*')
+			{
+				str->push_back(ch);
+			}
+			else
+			{
+				if(str->empty()) continue;
+				freeParts.push_back(str);
+
+				str = new string;
+			}
+		}
+		if(!str->empty()) freeParts.push_back(str);
+
+
+		size_t sLength = s.size();
+
+		int m = 0;
+		if(!begin.empty())
+		{
+			size_t matchLength =  begin.size();
+			for(; m < sLength && m < matchLength; m++)
+			{
+				char beginChar = begin[m];
+				if(beginChar=='?') continue;
+				if(beginChar == s[m]) continue;
+				
+				return false;
+			}
+
+			if(m<matchLength) return false;
+		}
+
+		int n = sLength - 1;
+		if(!end.empty())
+		{
+			size_t matchLength =  end.size();
+			int matchEndPoint = sLength-matchLength;
+			for(; n >= 0 && n >= matchEndPoint && n >= m; n--)
+			{
+				char endChar = end[n];
+				if(endChar=='?') continue;
+				if(endChar == s[n]) continue;
+				
+				return false;
+			}
+
+			if(n>=matchEndPoint && n<m) return false;
+		}
+
+		if(!freeParts.empty())
 		{
 
 		}
@@ -131,7 +210,7 @@ public:
 
 
 
-		return false;
+		return true;
 	}
 };
 

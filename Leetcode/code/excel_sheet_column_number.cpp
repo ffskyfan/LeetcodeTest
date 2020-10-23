@@ -47,7 +47,7 @@ public:
 		for(int i = 0; i < length; i++)
 		{
 			int power = length-i-1;
-			result += std::pow(26, power)* (s[i] - 'A' + 1);
+			result += pow(26, power)* (s[i] - 'A' + 1);
 		}
 
 		return result;
