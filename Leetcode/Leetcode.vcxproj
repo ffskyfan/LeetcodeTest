@@ -228,6 +228,7 @@
     <ClCompile Include="code\valid_palindrome.cpp" />
     <ClCompile Include="code\valid_palindrome_II.cpp" />
     <ClCompile Include="code\valid_parentheses.cpp" />
+    <ClCompile Include="code\wildcard_matching.cpp" />
     <ClCompile Include="code\zigzag_conversion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

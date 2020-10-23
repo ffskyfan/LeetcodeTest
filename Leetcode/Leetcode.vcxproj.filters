@@ -276,5 +276,8 @@
     <ClCompile Include="code\divide_two_integers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\wildcard_matching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

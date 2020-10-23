@@ -170,19 +170,20 @@ public:
 //再用减后的结果减去新的divisor，就这样divisor成倍增大，直到新结果小于新divisor，然后divisor开始成倍缩小，直到divisor回到原来大小，
 //这时新结果肯定小于divisor，就是除完了，我们把divisor积累的倍数加起来，就是最后的商
 //效率是O(logn)
+//abs在处理INT_MIN时是未定义行为，vs上面是直接返回原来的值，不做处理。
 
-int main()
-{
-	uint32_t x = 1<<32 -1;
-	int dividend = int(x);
-	//dividend++;
-
-	
-	Solution so;
-	int result = so.divide(1076233784, -1766978113);
-
-	return 0;
-
-}
+//int main()
+//{
+//	uint32_t x = 1<<32 -1;
+//	int dividend = int(x);
+//	//dividend++;
+//
+//	
+//	Solution so;
+//	int result = so.divide(1076233784, -1766978113);
+//
+//	return 0;
+//
+//}
 
 
