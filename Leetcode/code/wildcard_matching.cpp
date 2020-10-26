@@ -190,9 +190,9 @@ public:
 		{
 			size_t matchLength =  end.size();
 			int matchEndPoint = sLength-matchLength;
-			for(; n >= 0 && n >= matchEndPoint && n >= m; n--)
+			for(size_t i = 0; i < matchLength && n >= 0 && n >= matchEndPoint && n >= m; i++,n--)
 			{
-				char endChar = end[n];
+				char endChar = end[i];
 				if(endChar=='?') continue;
 				if(endChar == s[n]) continue;
 				
@@ -204,11 +204,32 @@ public:
 
 		if(!freeParts.empty())
 		{
+			for(string* part : freeParts)
+			{
+				if(m >= n) return false;
+
+				int partLength = static_cast<int>(part->size());
+				for(int i = 0; i < partLength; i++)
+				{
+					if(m > n) return false;
+					if(partLength-i < m-n) return false;
+
+					char ch = part->at(i);
+					if(s[m] == ch || ch=='?')
+					{
+						m++;
+					}
+					else
+					{
+						m = m - i + 1;
+						i = -1;
+					}
+				}
+			}
 
 		}
 
-
-
+		if(m<=n) return false;
 
 		return true;
 	}
@@ -218,7 +239,7 @@ public:
 int main()
 {
 	Solution so;
-	bool result = so.isMatch("aaaa", "*a");
+	bool result = so.isMatch("aa", "a");
 
 	return 0;
 
