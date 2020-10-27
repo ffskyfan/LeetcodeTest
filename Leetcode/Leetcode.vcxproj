@@ -200,6 +200,7 @@
     <ClCompile Include="code\plus_one.cpp" />
     <ClCompile Include="code\power_of_three.cpp" />
     <ClCompile Include="code\power_of_two.cpp" />
+    <ClCompile Include="code\regular_expression_matching.cpp" />
     <ClCompile Include="code\remove_duplicates_from_sorted_array.cpp" />
     <ClCompile Include="code\remove_duplicates_from_sorted_array_2.cpp" />
     <ClCompile Include="code\remove_duplicates_from_sorted_list.cpp" />

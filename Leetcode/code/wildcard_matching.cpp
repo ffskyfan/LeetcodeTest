@@ -48,82 +48,21 @@ using namespace std;
 
 class Solution {
 
-	bool match(string s, string p)
-	{
-		size_t sLength = s.size();
-		size_t sPos = 0;
-
-		size_t pLength = p.size();
-		bool isFreeToSearch = false;
-		size_t pFreeSearchIdx = 0;
-		size_t sFreeSearchIdx = 0;
-		for(size_t i = 0; i < pLength; i++)
-		{
-			if(sPos >= sLength) 
-			{
-				for(; i < pLength; i++) 
-				{
-					if(p[i] != '*') return false;
-				}
-				return true;
-			}
-
-			char ch = p[i];
-			if(ch == '*')
-			{
-				isFreeToSearch = true;
-				pFreeSearchIdx = i;
-				sFreeSearchIdx = sPos;
-			}
-			else if(ch == '?')
-			{
-				sPos++;
-			}
-			else
-			{
-				if(s[sPos] == ch)
-				{
-					sPos++;
-					continue;
-				}
-				else
-				{
-					if(isFreeToSearch == true)
-					{
-						i = pFreeSearchIdx;
-						sFreeSearchIdx++;
-						sPos = sFreeSearchIdx;
-						continue;
-					}
-					else
-					{
-						return false;
-					}
-				}
-
-			}
-
-		}
-
-		if(sPos < sLength)
-		{
-			if(p[pLength-1] == '*') return true;
-
-			return false;
-		}
-
-		
-		return true;
-
-	}
-
 public:
 	bool isMatch(string s, string p) {
 		string begin;
 		string end;
 		vector<string*> freeParts;
 
+		size_t sLength = s.size();
 		size_t pLength = p.size();
+		if(pLength == 0)
+		{
+			if(sLength == 0) return true;
+			return false;
+		}
+		if(pLength == 1 && p[0] == '*') return true;
+
 		size_t i = 0;
 		for(; i < pLength ; i++)
 		{
@@ -148,8 +87,9 @@ public:
 				break;
 		}
 
+		bool isHaveFreeSearch = false;
 		string* str = new string;
-		for(; i < j; i++)
+		for(; i <= j; i++)
 		{
 			char ch = p[i];
 			if(p[i] != '*')
@@ -158,6 +98,7 @@ public:
 			}
 			else
 			{
+				isHaveFreeSearch = true;
 				if(str->empty()) continue;
 				freeParts.push_back(str);
 
@@ -167,7 +108,6 @@ public:
 		if(!str->empty()) freeParts.push_back(str);
 
 
-		size_t sLength = s.size();
 
 		int m = 0;
 		if(!begin.empty())
@@ -206,7 +146,7 @@ public:
 		{
 			for(string* part : freeParts)
 			{
-				if(m >= n) return false;
+				if(m > n) return false;
 
 				int partLength = static_cast<int>(part->size());
 				for(int i = 0; i < partLength; i++)
@@ -226,21 +166,31 @@ public:
 					}
 				}
 			}
-
+		}
+		else
+		{
+			if(isHaveFreeSearch == false)
+			{
+				if(m <= n) return false;
+			}
 		}
 
-		if(m<=n) return false;
 
 		return true;
 	}
 };
 
+//解法，p分成3部分，以*作为分隔符，字符串开头begin，字符串尾end，可以自由匹配的freeparts(是个字符串的数组)，
+//比如a*b*c*d，那么a就是begin，d就是end，freeparts里有一个字符串b和c
+//如果begin存在，那么s的开头必须完全匹配begin，如果end存在，s的尾部必须完全匹配end
+//之后，如果freepart存在，那么刨去begin和end匹配过得部分，一个一个的找有没有freepart里的部分，直到把s里的字符串消耗光，如果都匹配到了，就确定匹配成功，如果没有，就失败
 
-int main()
-{
-	Solution so;
-	bool result = so.isMatch("aa", "a");
 
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	bool result = so.isMatch("c", "*?*");
+//
+//	return 0;
+//
+//}
