@@ -282,5 +282,8 @@
     <ClCompile Include="code\regular_expression_matching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\find_first_and_last_position_of_element_in_sorted_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
