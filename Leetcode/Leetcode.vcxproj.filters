@@ -285,5 +285,11 @@
     <ClCompile Include="code\find_first_and_last_position_of_element_in_sorted_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\first_bad_version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\guess_number_higher_or_lower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
