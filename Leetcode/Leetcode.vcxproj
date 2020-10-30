@@ -227,6 +227,7 @@
     <ClCompile Include="code\sum_of_two_integers.cpp" />
     <ClCompile Include="code\swap_nodes_in_pairs.cpp" />
     <ClCompile Include="code\symmetric_tree.cpp" />
+    <ClCompile Include="code\trapping_rain_water.cpp" />
     <ClCompile Include="code\two_sum_II_input_array_is_sorted.cpp" />
     <ClCompile Include="code\valid_boomerang.cpp" />
     <ClCompile Include="code\valid_palindrome.cpp" />
