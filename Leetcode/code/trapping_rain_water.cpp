@@ -36,25 +36,85 @@ public:
     int trap(vector<int>& height) {
 
 		int count = height.size();
+		if(count<=2) return 0;
 
 		int result = 0;
 		int uncertaintyResult = 0;
 
-		int backIdx = 0;
-		int backHeight = height[0];
-		for(int i = 1; i < count; i++)
+		bool isHeadAdd = true;
+
+		int idxBuffer = -1;
+		int maxHeight = 0;
+		int trapHeight = 0;
+
+		for(int i = -1, j = count - 1; i < count && j >= 0 && i < j; )
 		{
-			if(height[i] >= backHeight)
-			{
-				//result += i - backIdx - 1;
-				//backIdx = i;
+			if(isHeadAdd) i++;
+			else j--;
+
+			if(height[i]==0) continue;
+
+			if(height[j] == 0) {
+				if(isHeadAdd)
+				{
+					isHeadAdd = false;
+				}
+				continue;
 			}
-			else 
+
+			if(idxBuffer == -1)
 			{
-				uncertaintyResult += backHeight - height[i];
+				maxHeight = max(height[i], height[j]);
+				trapHeight = min(height[i], height[j]);
+				int space = j - i - 1;
+				uncertaintyResult = trapHeight * space;
+
+				if(height[i]<= height[j]) 
+				{
+					isHeadAdd = true;
+					idxBuffer = i;
+				}
+				else
+					idxBuffer = j;
 
 
+				continue;
 			}
+
+			int h = 0;
+			if(isHeadAdd) { h = height[i]; }
+			else { h = height[j]; }
+
+			if(h < trapHeight)
+			{
+				uncertaintyResult -= h;
+			}
+			else
+			{
+				maxHeight = max(height[i], height[j]);
+				trapHeight = min(height[i], height[j]);
+
+				uncertaintyResult -= trapHeight * (j - i);
+				result += uncertaintyResult;
+
+				int space = j - i - 1;
+				uncertaintyResult = trapHeight * space;
+
+				if(height[i] <= height[j])
+				{
+					isHeadAdd = true;
+					idxBuffer = i;
+				}
+				else
+					idxBuffer = j;
+
+			}
+
+
+
+
+
+			
 		}
 
         return result;
