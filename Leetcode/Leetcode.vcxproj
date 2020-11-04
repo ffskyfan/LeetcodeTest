@@ -168,6 +168,7 @@
     <ClCompile Include="code\factorial_trailing_zeroes.cpp" />
     <ClCompile Include="code\find_first_and_last_position_of_element_in_sorted_array.cpp" />
     <ClCompile Include="code\first_bad_version.cpp" />
+    <ClCompile Include="code\first_missing_positive.cpp" />
     <ClCompile Include="code\generate_parentheses.cpp" />
     <ClCompile Include="code\group_anagrams.cpp" />
     <ClCompile Include="code\guess_number_higher_or_lower.cpp" />

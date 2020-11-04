@@ -31,29 +31,25 @@ public:
 	int firstMissingPositive(vector<int>& nums) {
 		int count = static_cast<int>(nums.size());
 
-		int continuMin = 0;
-		int continuMax = 0;
-		int needlessCount = 0;
-		int result = 1;
+		vector<int> numsLessTheCount;
+		numsLessTheCount.resize(count + 1, 0);
+
 		for(int i = 0; i < count; i++)
 		{
-			if(nums[i] <= 0)
+			int num = nums[i];
+			if(num<0) continue;
+			if(num <= count)
 			{
-				needlessCount++;
-				continue;
+				numsLessTheCount[num] = num;
 			}
-
-			if(continuMin == 0) 
-			{
-				continuMin = nums[i];
-				continuMax = nums[i];
-			}
-
-
-			if(result==nums[i]) result++;
-
 		}
 
+		for(int i = 1; i < count+1; i++)
+		{
+			if(numsLessTheCount[i]==0) return i;
+		}
+
+		return count+1;
 	}
 };
 
@@ -62,8 +58,8 @@ public:
 //int main()
 //{
 //	Solution so;
-//	vector<int> x = {2,3,4,2,4};
-//	int result = so.singleNumber(x);
+//	vector<int> x = {1,2,0};
+//	int result = so.firstMissingPositive(x);
 //	//string result = so.convert("PAYPALISHIRING", 3);
 //
 //	return 0;
