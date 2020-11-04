@@ -43,7 +43,7 @@ public:
 
 		bool isHeadAdd = true;
 
-		int idxBuffer = -1;
+		bool isFirst = true;
 		int maxHeight = 0;
 		int trapHeight = 0;
 
@@ -62,57 +62,36 @@ public:
 				continue;
 			}
 
-			if(idxBuffer == -1)
-			{
-				maxHeight = max(height[i], height[j]);
-				trapHeight = min(height[i], height[j]);
-				int space = j - i - 1;
-				uncertaintyResult = trapHeight * space;
-
-				if(height[i]<= height[j]) 
-				{
-					isHeadAdd = true;
-					idxBuffer = i;
-				}
-				else
-					idxBuffer = j;
-
-
-				continue;
-			}
-
 			int h = 0;
 			if(isHeadAdd) { h = height[i]; }
 			else { h = height[j]; }
 
-			if(h < trapHeight)
+			if(isFirst == false && h < trapHeight)
 			{
 				uncertaintyResult -= h;
 			}
 			else
 			{
+				if(isFirst == false)
+				{
+					uncertaintyResult -= trapHeight * (j - i);
+					result += uncertaintyResult;
+				}
+				else
+				{
+					isFirst = false;
+				}
+
 				maxHeight = max(height[i], height[j]);
 				trapHeight = min(height[i], height[j]);
-
-				uncertaintyResult -= trapHeight * (j - i);
-				result += uncertaintyResult;
 
 				int space = j - i - 1;
 				uncertaintyResult = trapHeight * space;
 
-				if(height[i] <= height[j])
-				{
-					isHeadAdd = true;
-					idxBuffer = i;
-				}
-				else
-					idxBuffer = j;
+				if(height[i] <= height[j]) isHeadAdd = true;
+				else isHeadAdd = false;
 
 			}
-
-
-
-
 
 			
 		}
@@ -124,12 +103,12 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	vector<int> x = { 4,2,0,3,2,5 };
-	int result = so.trap(x);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	vector<int> x = { 6,0,1 };
+//	int result = so.trap(x);
+//
+//	return 0;
+//
+//}
