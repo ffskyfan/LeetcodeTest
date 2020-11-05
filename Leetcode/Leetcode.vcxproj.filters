@@ -297,5 +297,8 @@
     <ClCompile Include="code\first_missing_positive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\longest_valid_parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

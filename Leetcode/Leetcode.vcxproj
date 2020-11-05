@@ -184,6 +184,7 @@
     <ClCompile Include="code\longest_common_prefix.cpp" />
     <ClCompile Include="code\longest_palindromic_substring.cpp" />
     <ClCompile Include="code\longest_substring_without_repeating_characters.cpp" />
+    <ClCompile Include="code\longest_valid_parentheses.cpp" />
     <ClCompile Include="code\majority_element.cpp" />
     <ClCompile Include="code\maximum_depth_of_binary_tree.cpp" />
     <ClCompile Include="code\maximum_subarray.cpp" />
