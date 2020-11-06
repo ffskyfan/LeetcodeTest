@@ -35,9 +35,10 @@ using namespace std;
 
 class Solution {
 
-    int findContinousValidParentheses(const string& s,const int& length, int& idx, bool& isContinue)
+	int findContinousValidParentheses(const string& s, const int& length, int& idx, int& depth)
     {
         idx++;
+		depth++;
         if(idx >= length)
         {
             return 0;
@@ -46,26 +47,31 @@ class Solution {
 
         if(s[idx] == ')')
         {
+			depth--;
             return 1;
         }
         else 
         {
-			int validPCount =  findContinousValidParentheses(s, length, idx, isContinue);
-            if(isContinue == false) return validPCount;
+			int validPCount = 0;
+            for(;;)
+            {
+				int count = findContinousValidParentheses(s, length, idx, depth);
+				validPCount += count;
+				if(depth == 0) 
+                    break;
 
-            if(s[idx] == ')')
-            {
-                return validPCount+1;
+				if(idx >= length)
+				{
+					validPCount -=count;
+					if(validPCount < count)validPCount = count;
+                    depth--;
+					break;
+				}
+
             }
-            else
-            {
-				isContinue = false;
-                return validPCount;
-            }
+
+            return validPCount;
         }
-
-
-
 
     }
 
@@ -80,7 +86,8 @@ public:
             if(s[i] == '(')
             {
                 bool isContinue = true;
-				int validPCount = findContinousValidParentheses(s, length, i, isContinue);
+                int depth = 0;
+				int validPCount = findContinousValidParentheses(s, length, i, depth);
                 if(validPCount > result)
                 {
 					result = validPCount;
@@ -94,7 +101,7 @@ public:
         }
 
 
-        return result;
+        return result*2;
     }
 
 };
@@ -104,7 +111,7 @@ public:
 int main()
 {
 	Solution so;
-	std::string s = "(((()))";
+	std::string s = "(((()())())(((((((())))))";
 	
 
 	int result = so.longestValidParentheses(s);
