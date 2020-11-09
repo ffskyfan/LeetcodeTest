@@ -37,36 +37,50 @@ class Solution {
 
 	int findContinousValidParentheses(const string& s, const int& length, int& idx, int& depth)
     {
-        idx++;
-		depth++;
+		int oldDepth = depth;
+
         if(idx >= length)
         {
             return 0;
         }
 
 
-        if(s[idx] == ')')
+        bool canLink = true;
+
+		if(depth != 0 && s[idx] == ')')
         {
 			depth--;
             return 1;
         }
         else 
         {
+            if(s[idx] == ')') return 0;
+
 			int validPCount = 0;
             for(;;)
             {
-				int count = findContinousValidParentheses(s, length, idx, depth);
-				validPCount += count;
-				if(depth == 0) 
-                    break;
+				idx++;
+				if(idx >= length) break;
+				depth++;
 
-				if(idx >= length)
-				{
-					validPCount -=count;
-					if(validPCount < count)validPCount = count;
-                    depth--;
-					break;
-				}
+				int count = findContinousValidParentheses(s, length, idx, depth);
+                if(count==0) continue;
+
+                if(depth == oldDepth && canLink == true)
+                {
+					validPCount += count;
+                }
+                else
+                {
+					if(count > validPCount)
+					{
+						validPCount = count;
+					}
+
+					if(canLink == true) { canLink = false; }
+					else { canLink = true; }
+                }
+
 
             }
 
@@ -80,26 +94,10 @@ public:
     int longestValidParentheses(string s) {
 
         int length = static_cast<int>(s.size());
-		int result = 0;
-        for(int i = 0; i < length; )
-        {
-            if(s[i] == '(')
-            {
-                bool isContinue = true;
-                int depth = 0;
-				int validPCount = findContinousValidParentheses(s, length, i, depth);
-                if(validPCount > result)
-                {
-					result = validPCount;
-                }
-            }
-            else
-            {
-                i++;
-                continue;
-            }
-        }
 
+        int idx = 0;
+		int depth = 0;
+		int result = findContinousValidParentheses(s, length, idx, depth);
 
         return result*2;
     }
@@ -111,7 +109,7 @@ public:
 int main()
 {
 	Solution so;
-	std::string s = "(((()())())(((((((())))))";
+	std::string s = "()()";
 	
 
 	int result = so.longestValidParentheses(s);
