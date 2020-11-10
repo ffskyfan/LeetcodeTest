@@ -56,12 +56,13 @@ class Solution {
         {
             if(s[idx] == ')') return 0;
 
+			depth++;
+
 			int validPCount = 0;
             for(;;)
             {
 				idx++;
 				if(idx >= length) break;
-				depth++;
 
 				int count = findContinousValidParentheses(s, length, idx, depth);
                 if(count==0) continue;
@@ -109,7 +110,7 @@ public:
 int main()
 {
 	Solution so;
-	std::string s = "()()";
+	std::string s = "(()())";
 	
 
 	int result = so.longestValidParentheses(s);
