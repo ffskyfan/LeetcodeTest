@@ -44,35 +44,39 @@ class Solution {
             return 0;
         }
 
+		int validPCount = 0;
+		bool canLink = true;
+		for(;;)
+		{
 
-        bool canLink = true;
+			if(idx >= length) break;
 
-		if(depth != 0 && s[idx] == ')')
-        {
-			depth--;
-            return 1;
-        }
-        else 
-        {
-            if(s[idx] == ')') return 0;
+			if(s[idx] == ')')
+			{
+				if(depth != 0)
+				{
+					depth--;
+					validPCount++;
+				}
 
-			depth++;
-
-			int validPCount = 0;
-            for(;;)
-            {
+				idx++;
+				continue;
+			}
+			else
+			{
+				depth++;
 				idx++;
 				if(idx >= length) break;
 
 				int count = findContinousValidParentheses(s, length, idx, depth);
-                if(count==0) continue;
+				if(count == 0) continue;
 
-                if(depth == oldDepth && canLink == true)
-                {
+				if(canLink == true)
+				{
 					validPCount += count;
-                }
-                else
-                {
+				}
+				else
+				{
 					if(count > validPCount)
 					{
 						validPCount = count;
@@ -80,13 +84,19 @@ class Solution {
 
 					if(canLink == true) { canLink = false; }
 					else { canLink = true; }
-                }
+				}
+
+				if(depth < oldDepth)
+				{//小于意味着更上层的收括号让我找到了
+					break;
+				}
 
 
-            }
+			}
 
-            return validPCount;
-        }
+		}
+
+		return validPCount;
 
     }
 
