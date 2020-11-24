@@ -38,6 +38,7 @@ class Solution {
 	int findContinousValidParentheses(const string& s, const int& length, int& idx, int& depth)
     {
 		int oldDepth = depth;
+		int oldCount = 0;
 
         if(idx >= length)
         {
@@ -50,6 +51,7 @@ class Solution {
 		{
 
 			if(idx >= length) break;
+			if(depth < oldDepth) break;//小于意味着更上层的收括号让我找到了
 
 			if(s[idx] == ')')
 			{
@@ -57,6 +59,10 @@ class Solution {
 				{
 					depth--;
 					validPCount++;
+				}
+				else
+				{
+					canLink = false;
 				}
 
 				idx++;
@@ -71,32 +77,28 @@ class Solution {
 				int count = findContinousValidParentheses(s, length, idx, depth);
 				if(count == 0) continue;
 
+				if(depth > oldDepth)canLink = false;
+
 				if(canLink == true)
 				{
 					validPCount += count;
 				}
 				else
 				{
-					if(count > validPCount)
-					{
-						validPCount = count;
-					}
+					if(validPCount>oldCount) oldCount = validPCount;
+					validPCount = count;
 
 					if(canLink == true) { canLink = false; }
 					else { canLink = true; }
 				}
-
-				if(depth < oldDepth)
-				{//小于意味着更上层的收括号让我找到了
-					break;
-				}
-
-
 			}
 
 		}
 
-		return validPCount;
+
+		if(validPCount > oldCount) oldCount = validPCount;
+
+		return oldCount;
 
     }
 
@@ -117,16 +119,16 @@ public:
 
 
 
-int main()
-{
-	Solution so;
-	std::string s = "(()())";
-	
-
-	int result = so.longestValidParentheses(s);
-
-	return 0;
-
-}
+//int main()
+//{
+//	Solution so;
+//	std::string s = ")()())()()(";
+//	
+//
+//	int result = so.longestValidParentheses(s);
+//
+//	return 0;
+//
+//}
 
 
