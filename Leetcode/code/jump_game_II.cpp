@@ -35,23 +35,49 @@ using namespace std;
 
 class Solution {
 
-	int jump(vector<int>& nums,const int& count, int idx)
+	int jumpEx(vector<int>& nums,const int& count, int idx)
 	{
-		if(idx==count-1) return 0;
-
-		int number = nums[idx];
-
-		for(int i=1; i<=number; i++)
+		vector<int> allPossibleIdx;
+		for(int i = idx-1; i >= 0; i--)
 		{
+			int number = nums[i];
+			if(i + number >= idx)
+			{
+				allPossibleIdx.push_back(i);
 
+			}
 		}
 
+		std::sort(allPossibleIdx.begin(), allPossibleIdx.end());
+		if(allPossibleIdx[0]==0) return 1;
+
+		int possibleCount = static_cast<int>(allPossibleIdx.size());
+		int result = 0;
+		for(int j = 0 ; j < possibleCount; j++)
+		{
+			int pIdx = allPossibleIdx[j];
+			int x = jumpEx(nums, count, pIdx);
+
+			if(x == 0) continue;
+
+			if(result == 0) result = x;
+			else if(x < result) result = x;
+
+		}
+			
+		if(result == 0) return 0;
+		else return result + 1;
 	}
 
 
 public:
     int jump(vector<int>& nums) {
 
+		int count = static_cast<int>(nums.size());
+		if(count<=1) return 0;
+		int result = jumpEx(nums, count, count-1);
+
+		return result;
     }
 };
 
@@ -60,7 +86,7 @@ public:
 
 int main()
 {
-	vector<int> candidates = { 2,3,6,7,10 };
+	vector<int> candidates = { 5,6,4,4,6,9,4,4,7,4,4,8,2,6,8,1,5,9,6,5,2,7,9,7,9,6,9,4,1,6,8,8,4,4,2,0,3,8,5 };
 
 	Solution so;
 	int result = so.jump(candidates);

@@ -300,5 +300,8 @@
     <ClCompile Include="code\longest_valid_parentheses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="code\jump_game_II.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
