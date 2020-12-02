@@ -59,7 +59,12 @@ class Solution {
 public:
 	bool isNumber(std::string s) 
 	{
+		int count = static_cast<int>(s.size());
+		for(int i = 0; i < count; i++)
+		{
 
+
+		}
 
 
 
